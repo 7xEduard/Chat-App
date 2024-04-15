@@ -3,8 +3,8 @@ import 'package:chat_app/components/custom_button.dart';
 import 'package:chat_app/components/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
               child: const Padding(
                 padding: EdgeInsets.only(left: 20),
                 child: Text(
-                  "login",
+                  "sign up",
                   style: TextStyle(
                     fontFamily: 'Bubblegum',
                     color: Colors.white,
@@ -56,7 +56,6 @@ class LoginScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(30),
                   child: ListView(
                     children: [
-                      const SizedBox(height: 30),
                       FadeInUp(
                         duration: const Duration(milliseconds: 800),
                         child: CustomTextField(
@@ -70,22 +69,18 @@ class LoginScreen extends StatelessWidget {
                           hintText: "Password",
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       FadeInUp(
                         duration: const Duration(milliseconds: 1400),
-                        child: const Padding(
-                          padding: EdgeInsets.only(left: 5),
-                          child: Text(
-                            "Forgot Password?",
-                            style: TextStyle(color: Color(0xFF05001E)),
-                          ),
+                        child: CustomTextField(
+                          hintText: "Confirm Password",
                         ),
                       ),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 30),
                       FadeInUp(
                         duration: const Duration(milliseconds: 1700),
                         child: CustomButton(
-                          labelText: "Login",
+                          labelText: "sign up",
                         ),
                       ),
                       const SizedBox(height: 50),
@@ -93,7 +88,7 @@ class LoginScreen extends StatelessWidget {
                         duration: const Duration(milliseconds: 2000),
                         child: const Center(
                           child: Text(
-                            "Continue with social media",
+                            "- OR -",
                             style: TextStyle(
                               color: Color(0xFF05001E),
                             ),
@@ -101,11 +96,23 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 30),
+                      FadeInUp(
+                        duration: const Duration(milliseconds: 2300),
+                        child: const Center(
+                          child: Text(
+                            "Sign-up with",
+                            style: TextStyle(
+                              color: Color(0xFF05001E),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
                       Row(
                         children: [
                           Expanded(
                             child: FadeInUp(
-                              duration: const Duration(milliseconds: 2300),
+                              duration: const Duration(milliseconds: 2600),
                               child: MaterialButton(
                                 onPressed: () {},
                                 height: 50,
@@ -128,7 +135,7 @@ class LoginScreen extends StatelessWidget {
                           const SizedBox(width: 30),
                           Expanded(
                             child: FadeInUp(
-                              duration: const Duration(milliseconds: 2300),
+                              duration: const Duration(milliseconds: 2600),
                               child: MaterialButton(
                                 onPressed: () {},
                                 height: 50,
@@ -150,26 +157,22 @@ class LoginScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      const SizedBox(height: 50),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       FadeInUp(
-                        duration: const Duration(milliseconds: 2600),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, 'SignUpScreen');
+                        duration:const Duration(milliseconds: 2900),
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
                           },
-                          child: const Center(
-                            child: Text(
-                              "Create New Account",
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                decorationColor: Colors.blue,
-                                color: Colors.blue,
-                                fontSize: 18,
-                              ),
-                            ),
+                          icon: Image.asset(
+                            'assets/images/left-arrow.png',
+                            width: 50,
+                            height: 50,
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),
