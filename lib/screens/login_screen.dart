@@ -18,34 +18,29 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  FadeInUp(
-                    duration: const Duration(milliseconds: 1000),
-                    child: Center(
-                      child: Image.asset(
-                        'assets/images/chat icon 2.png',
-                        width: 100,
-                        height: 100,
-                      ),
-                    ),
+            FadeInUp(
+              duration: const Duration(milliseconds: 1000),
+              child: Center(
+                child: Image.asset(
+                  'assets/images/chat icon 2.png',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            FadeInUp(
+              duration: const Duration(milliseconds: 1300),
+              child: const Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: Text(
+                  "login",
+                  style: TextStyle(
+                    fontFamily: 'Bubblegum',
+                    color: Colors.white,
+                    fontSize: 30,
                   ),
-                  const SizedBox(height: 10),
-                  FadeInUp(
-                    duration: const Duration(milliseconds: 1300),
-                    child: const Text(
-                      "login",
-                      style: TextStyle(
-                        fontFamily: 'Bubblegum',
-                        color: Colors.white,
-                        fontSize: 30,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
             Expanded(
@@ -59,7 +54,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(30),
-                  child: Column(
+                  child: ListView(
                     children: [
                       const SizedBox(height: 30),
                       FadeInUp(
@@ -78,9 +73,11 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: 40),
                       FadeInUp(
                         duration: const Duration(milliseconds: 1400),
-                        child: const Text(
-                          "Forgot Password?",
-                          style: TextStyle(color: Color(0xFF05001E)),
+                        child: const Center(
+                          child: Text(
+                            "Forgot Password?",
+                            style: TextStyle(color: Color(0xFF05001E)),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 40),
@@ -93,67 +90,65 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: 50),
                       FadeInUp(
                         duration: const Duration(milliseconds: 2000),
-                        child: const Text(
-                          "Continue with social media",
-                          style: TextStyle(
-                            color: Color(0xFF05001E),
+                        child: const Center(
+                          child: Text(
+                            "Continue with social media",
+                            style: TextStyle(
+                              color: Color(0xFF05001E),
+                            ),
                           ),
                         ),
                       ),
                       const SizedBox(height: 30),
-                      // Row(
-                      //   children: [
-                      //     Expanded(
-                      //       child: FadeInUp(
-                      //         duration: const Duration(milliseconds: 1800),
-                      //         child: MaterialButton(
-                      //           onPressed: () {},
-                      //           height: 50,
-                      //           color: Colors.blue,
-                      //           shape: RoundedRectangleBorder(
-                      //             borderRadius: BorderRadius.circular(50),
-                      //           ),
-                      //           child: const Center(
-                      //             child: Text(
-                      //               "Facebook",
-                      //               style: TextStyle(
-                      //                 color: Colors.white,
-                      //                 fontWeight: FontWeight.bold,
-                      //               ),
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     const SizedBox(
-                      //       width: 30,
-                      //     ),
-                      //     Expanded(
-                      //       child: FadeInUp(
-                      //         duration: const Duration(
-                      //           milliseconds: 1900,
-                      //         ),
-                      //         child: MaterialButton(
-                      //           onPressed: () {},
-                      //           height: 50,
-                      //           shape: RoundedRectangleBorder(
-                      //             borderRadius: BorderRadius.circular(50),
-                      //           ),
-                      //           color: Colors.black,
-                      //           child: const Center(
-                      //             child: Text(
-                      //               "Github",
-                      //               style: TextStyle(
-                      //                 color: Colors.white,
-                      //                 fontWeight: FontWeight.bold,
-                      //               ),
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     )
-                      //   ],
-                      // )
+                      Row(
+                        children: [
+                          Expanded(
+                            child: FadeInUp(
+                              duration: const Duration(milliseconds: 2300),
+                              child: MaterialButton(
+                                onPressed: () {},
+                                height: 50,
+                                color: Colors.blue,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    "Facebook",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 30),
+                          Expanded(
+                            child: FadeInUp(
+                              duration: const Duration(milliseconds: 2300),
+                              child: MaterialButton(
+                                onPressed: () {},
+                                height: 50,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                                color: Colors.black,
+                                child: const Center(
+                                  child: Text(
+                                    "Github",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
