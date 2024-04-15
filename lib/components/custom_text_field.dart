@@ -6,15 +6,15 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
         boxShadow: const [
           BoxShadow(
             color: Color(0xFFced4da),
-            blurRadius: 20,
-            offset: Offset(0, 10),
+            blurRadius: 30,
+            
           )
         ],
       ),

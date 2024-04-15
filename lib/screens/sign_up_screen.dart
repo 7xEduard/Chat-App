@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:chat_app/components/custom_button.dart';
 import 'package:chat_app/components/custom_text_field.dart';
+import 'package:chat_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class SignUpScreen extends StatelessWidget {
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
-          color: Color(0xFF05001E),
+          color: kPrimaryColor,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,7 +91,7 @@ class SignUpScreen extends StatelessWidget {
                           child: Text(
                             "- OR -",
                             style: TextStyle(
-                              color: Color(0xFF05001E),
+                              color: kPrimaryColor,
                             ),
                           ),
                         ),
@@ -102,77 +103,37 @@ class SignUpScreen extends StatelessWidget {
                           child: Text(
                             "Sign-up with",
                             style: TextStyle(
-                              color: Color(0xFF05001E),
+                              color: kPrimaryColor,
                             ),
                           ),
                         ),
                       ),
                       const SizedBox(height: 20),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: FadeInUp(
-                              duration: const Duration(milliseconds: 2600),
-                              child: MaterialButton(
-                                onPressed: () {},
+                       FadeInUp(
+                        duration: const Duration(milliseconds: 2600),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: Image.asset(
+                                'assets/images/facebook.png',
+                                width: 50,
                                 height: 50,
-                                color: Colors.blue,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                child: const Center(
-                                  child: Text(
-                                    "Facebook",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
                               ),
                             ),
-                          ),
-                          const SizedBox(width: 30),
-                          Expanded(
-                            child: FadeInUp(
-                              duration: const Duration(milliseconds: 2600),
-                              child: MaterialButton(
-                                onPressed: () {},
+                            IconButton(
+                              onPressed: () {},
+                              icon: Image.asset(
+                                'assets/images/google.png',
+                                width: 50,
                                 height: 50,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                color: Colors.black,
-                                child: const Center(
-                                  child: Text(
-                                    "Github",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
                               ),
                             ),
-                          )
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      FadeInUp(
-                        duration:const Duration(milliseconds: 2900),
-                        child: IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: Image.asset(
-                            'assets/images/left-arrow.png',
-                            width: 50,
-                            height: 50,
-                          ),
+                          ],
                         ),
-                      )
+                      ),
+                      
                     ],
                   ),
                 ),
