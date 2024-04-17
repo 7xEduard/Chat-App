@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:chat_app/constants.dart';
 import 'package:chat_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,10 +14,13 @@ class Splash extends StatelessWidget {
       Get.to(const LoginScreen());
     });
     return Scaffold(
-      backgroundColor: const Color(0xFF05001E),
+      backgroundColor: kPrimaryColor,
       body: Center(
         child: Image.asset(
-            'assets/images/2.png'),
+            'assets/images/chat_icon_bubbel.png',
+            width: 150,
+            height: 150,
+            ),
       ),
     );
   }

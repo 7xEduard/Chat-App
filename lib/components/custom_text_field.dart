@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({super.key, this.hintText});
-  String? hintText;
+  const CustomTextField({super.key, this.hintText, this.onChanged});
+  final String? hintText;
+  final Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,14 +15,14 @@ class CustomTextField extends StatelessWidget {
           BoxShadow(
             color: Color(0xFFced4da),
             blurRadius: 30,
-            
           )
         ],
       ),
       child: TextField(
+        onChanged: onChanged,
         decoration: InputDecoration(
             hintText: hintText,
-            hintStyle: const TextStyle(color: Color(0xFF495057)),
+            hintStyle: const TextStyle(color: Color(0xFF6c757d)),
             border: InputBorder.none),
       ),
     );

@@ -20,7 +20,7 @@ class ChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       routes: {
-        'SignUpScreen': (context) => const SignUpScreen(),
+        'SignUpScreen': (context) =>  SignUpScreen(),
         'Splash': (context) => const Splash(),
       },
       debugShowCheckedModeBanner: false,
