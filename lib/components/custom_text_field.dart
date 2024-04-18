@@ -1,3 +1,4 @@
+import 'package:chat_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -19,11 +20,13 @@ class CustomTextField extends StatelessWidget {
         ],
       ),
       child: TextField(
+        cursorColor: kPrimaryColor,
         onChanged: onChanged,
         decoration: InputDecoration(
-            hintText: hintText,
-            hintStyle: const TextStyle(color: Color(0xFF6c757d)),
-            border: InputBorder.none),
+          hintText: hintText,
+          hintStyle: const TextStyle(color: Color(0xFF6c757d)),
+          border: InputBorder.none,
+        ),
       ),
     );
   }

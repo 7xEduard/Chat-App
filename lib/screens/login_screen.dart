@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             FadeInUp(
               duration: const Duration(milliseconds: 1300),
               child: const Padding(
@@ -46,13 +46,13 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            
             Expanded(
               child: FadeInUp(
                 duration: const Duration(milliseconds: 2000),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
+                  padding: const EdgeInsets.fromLTRB(15, 10, 15, 0),
                   child: Container(
+                    height: double.infinity,
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -61,89 +61,100 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-                      child: Column(
+                      padding: const EdgeInsets.all(5),
+                      child: ListView(
                         children: [
-                          FadeInUp(
-                            duration: const Duration(milliseconds: 800),
-                            child: const CustomTextField(
-                              hintText: "Email or Phone number",
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(40),
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          FadeInUp(
-                            duration: const Duration(milliseconds: 1100),
-                            child: const CustomTextField(
-                              hintText: "Password",
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                          FadeInUp(
-                            duration: const Duration(milliseconds: 1400),
-                            child: const Padding(
-                              padding: EdgeInsets.only(right: 200),
-                              child: Text(
-                                "Forgot Password?",
-                                style: TextStyle(color: Color(0xFF1789fc)),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 40),
-                          FadeInUp(
-                            duration: const Duration(milliseconds: 1700),
-                            child: CustomButton(
-                              onPressed: () {},
-                              labelText: "Login",
-                            ),
-                          ),
-                          const SizedBox(height: 50),
-                          FadeInUp(
-                            duration: const Duration(milliseconds: 2000),
-                            child: const Row(
+                            child: Column(
                               children: [
-                                Expanded(
-                                  child: Divider(
-                                    color: Color(0xFFced4da),
+                                FadeInUp(
+                                  duration: const Duration(milliseconds: 800),
+                                  child: const CustomTextField(
+                                    hintText: "Email or Phone number",
                                   ),
                                 ),
-                                Text(
-                                  "  OR  ",
-                                  style: TextStyle(
-                                    color: Color(0xFF6c757d),
+                                const SizedBox(height: 10),
+                                FadeInUp(
+                                  duration: const Duration(milliseconds: 1100),
+                                  child: const CustomTextField(
+                                    hintText: "Password",
                                   ),
                                 ),
-                                Expanded(
-                                  child: Divider(
-                                    color: Color(0xFFced4da),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          const AccountsWidget(),
-                          const SizedBox(height: 50),
-                          FadeInUp(
-                            duration: const Duration(milliseconds: 2600),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text(
-                                  "Don't have an account? ",
-                                  style: TextStyle(
-                                    color: Color(0xFF6c757d),
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, 'SignUpScreen');
-                                  },
+                                const SizedBox(height: 20),
+                                FadeInUp(
+                                  duration: const Duration(milliseconds: 1400),
                                   child: const Text(
-                                    "Sign up",
-                                    style: TextStyle(
-                                      color: Color(0xFF1789fc),
-                                    ),
+                                    "Forgot Password?",
+                                    style: TextStyle(color: Color(0xFF1789fc)),
+                                  ),
+                                ),
+                                const SizedBox(height: 40),
+                                FadeInUp(
+                                  duration: const Duration(milliseconds: 1700),
+                                  child: CustomButton(
+                                    onPressed: () {},
+                                    labelText: "Login",
+                                  ),
+                                ),
+                                const SizedBox(height: 50),
+                                FadeInUp(
+                                  duration: const Duration(milliseconds: 2000),
+                                  child: const Row(
+                                    children: [
+                                      Expanded(
+                                        child: Divider(
+                                          color: Color(0xFFced4da),
+                                        ),
+                                      ),
+                                      Text(
+                                        "  OR  ",
+                                        style: TextStyle(
+                                          color: Color(0xFF6c757d),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Divider(
+                                          color: Color(0xFFced4da),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                FadeInUp(
+                                  duration: const Duration(milliseconds: 2300),
+                                  child: const AccountsWidget(),
+                                ),
+                                const SizedBox(height: 50),
+                                FadeInUp(
+                                  duration: const Duration(milliseconds: 2600),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      const Text(
+                                        "Don't have an account? ",
+                                        style: TextStyle(
+                                          color: Color(0xFF6c757d),
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          Navigator.pushNamed(
+                                              context, 'SignUpScreen');
+                                        },
+                                        child: const Text(
+                                          "Sign up",
+                                          style: TextStyle(
+                                            color: Color(0xFF1789fc),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
