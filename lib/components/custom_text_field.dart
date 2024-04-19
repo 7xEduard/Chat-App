@@ -1,10 +1,13 @@
+import 'dart:ui';
+
 import 'package:chat_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, this.hintText, this.onChanged});
+  const CustomTextField({super.key, this.hintText, this.onChanged ,this.validator});
   final String? hintText;
   final Function(String)? onChanged;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,10 +22,13 @@ class CustomTextField extends StatelessWidget {
           )
         ],
       ),
-      child: TextField(
+      child: TextFormField(
+        
+        validator: validator,
         cursorColor: kPrimaryColor,
         onChanged: onChanged,
         decoration: InputDecoration(
+          
           hintText: hintText,
           hintStyle: const TextStyle(color: Color(0xFF6c757d)),
           border: InputBorder.none,

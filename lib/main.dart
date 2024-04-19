@@ -19,6 +19,12 @@ class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: ThemeData(
+        textSelectionTheme: const TextSelectionThemeData(
+          selectionColor: Color(0xFF64b5f6), 
+          selectionHandleColor: Colors.yellow,
+        ),
+      ),
       routes: {
         'SignUpScreen': (context) =>  SignUpScreen(),
         'Splash': (context) => const Splash(),
